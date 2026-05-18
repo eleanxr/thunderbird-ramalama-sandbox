@@ -2,7 +2,24 @@ FROM ghcr.io/block/goose:1.28.0
 
 USER root
 
-RUN apt-get update && apt-get install -y python3 python3-pip mercurial bash findutils gzip make perl tar unzip
+RUN apt-get update && apt-get install -y python3 \
+    python3-pip \
+    mercurial \
+    bash \
+    findutils \
+    gzip \
+    make \
+    perl \
+    tar \
+    unzip
 
 USER 1000
+
+# Install Rust
+RUN mkdir -p /home/goose/.rustup && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /home/goose/.rustup/rustup && \
+    chmod ug+x /home/goose/.rustup/rustup && \
+    /home/goose/.rustup/rustup -y
+
+RUN . /home/goose/.cargo/env && cargo install searchfox-cli ripgrep
 

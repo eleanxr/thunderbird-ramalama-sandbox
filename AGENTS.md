@@ -26,6 +26,8 @@ needed when working on Thunderbird will be in the comm/ directory.
 ## Searching
 
 - When searching for symbols, prefer searching just in the comm/ directory.
+- To use `searchfox-cli` for the comm/ repository, use the `--repo comm-central` command line argument.
+- Prefer ripgrep (`rg`) for text searching.
 
 ## Build System
 
@@ -58,3 +60,7 @@ the following command in the source/comm/ directory:
 hg diff -c .
 ```
 
+## Making Changes
+
+When starting a new task, always present the user with a plan before proceeding
+with any changes.
