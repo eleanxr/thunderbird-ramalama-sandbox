@@ -14,6 +14,7 @@ an additional repository that is checked out inside the Mozilla Firefox codebase
   and exceptions for Thunderbird that are described in this file.
   When Firefox and Thunderbird guidance are at odds, prefer
   Thunderbird guidance.
+- Both code bases are implemented in Javascript, C++, and Rust.
 
 ## Version Control
 
@@ -31,6 +32,8 @@ the metadata for the move is recorded in Mercurial.
 - When searching for symbols, prefer searching just in the comm/ directory.
 - To use `searchfox-cli` for the comm/ repository, use the `--repo comm-central` command line argument.
 - Prefer ripgrep (`rg`) for text searching.
+- When searching files locally, limit searches to the comm/ directory.
+- Unless otherwise instructed, searches can ignore the comm/suite and comm/third\_party directories.
 
 ## Build System
 
@@ -62,6 +65,14 @@ the following command in the source/comm/ directory:
 ```
 hg diff -c .
 ```
+
+### Code Review Guidelines
+
+* Identify deviations from language-specific best practices.
+* Identify unhandled error conditions.
+* Identify undocumented public-facing interfaces.
+* Read code surrounding code even if it's not in the patch by reading files from the filesystem.
+* Look at function definitions, class definitions, etc., even if they are in other files to ensure they are being correctly used.
 
 ## Making Changes
 
