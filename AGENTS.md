@@ -67,3 +67,31 @@ hg diff -c .
 
 When starting a new task, always present the user with a plan before proceeding
 with any changes.
+
+## Automated Tests
+
+There are multiple kinds of tests:
+
+* xpcshell tests, often referred to as unit tests, are implemented in
+  javascript and do not have an application window. They are used to test
+  components at lower levels.
+* mochi tests, often referred to as browser tests, are also implemented in
+  javascript and allow scripting of UI actions such as opening windows,
+  clicking on UI elements.
+
+The testing framework is not any of the commonly used testing frameworks, so to
+understand how to write tests and check assertions, it is necessary to look at
+similar tests rather than assuming any particular testing or mocking framework.
+
+For both mochi tests and xpcshell tests, tests are added with the following
+structure:
+
+```
+add_task([async] function test_testName() {
+  ... // test logic
+});
+```
+
+Similar to `add_task`, `add_setup` can be used to add a function to be called
+before starting any tests in a file.
+
