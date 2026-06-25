@@ -47,22 +47,6 @@ $ ./mach commlint -l <formatter> [file paths...]
 Where `<formatter>` is one of `clang-format`, `rustfmt`, or `eslint` depending
 on whether the files are C++, Rust, or Javascript files respectively.
 
-## Reviewing Changes
-
-To get a diff that is suitable for reviewing the current working changes, run
-the following command in the source/comm/ directory:
-
-```
-hg diff
-```
-
-To get a diff of the most recently committed changes suitable for reviewing, run
-the following command in the source/comm/ directory:
-
-```
-hg diff -c .
-```
-
 ### Code Review Guidelines
 
 * Identify deviations from language-specific best practices.
