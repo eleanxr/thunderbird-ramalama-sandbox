@@ -18,14 +18,11 @@ an additional repository that is checked out inside the Mozilla Firefox codebase
 
 ## Version Control
 
-Both projects are using mercurial repositories.
+Both projects are using git repositories.
 
 The Firefox repository was checked out to source/ and the Thunderbird
 repository was checked out to comm/ inside of source. Almost all modifications
 needed when working on Thunderbird will be in the comm/ directory.
-
-To move files that are version controlled, use the `hg mv` command to ensure
-the metadata for the move is recorded in Mercurial.
 
 ## Searching
 
