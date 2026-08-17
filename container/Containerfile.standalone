@@ -1,0 +1,22 @@
+FROM ubuntu:26.04
+
+USER root
+
+RUN apt-get update && apt-get install -y python3 \
+    curl \
+    bzip2 \
+    python3-pip \
+    mercurial \
+    bash \
+    findutils \
+    gzip \
+    make \
+    perl \
+    tar \
+    unzip \
+    build-essential \
+    git
+
+# Install goose
+RUN curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | CONFIGURE=false bash
+
