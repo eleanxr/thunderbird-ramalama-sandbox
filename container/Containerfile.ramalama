@@ -1,4 +1,4 @@
-FROM ghcr.io/block/goose:1.28.0
+FROM ghcr.io/aaif-goose/goose:1.46.0
 
 USER root
 
