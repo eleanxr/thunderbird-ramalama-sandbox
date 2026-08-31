@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y python3 \
     build-essential \
     git
 
-RUN useradd -m goose
+RUN userdel ubuntu
+
+RUN useradd -m goose -u 1000
 
 USER goose
 
@@ -25,4 +27,6 @@ WORKDIR /home/goose
 
 # Install goose
 RUN curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | CONFIGURE=false bash
+
+ENTRYPOINT /home/goose/.local/bin/goose
 
