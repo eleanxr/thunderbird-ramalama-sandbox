@@ -18,7 +18,7 @@ Build the Goose container:
 
 ```
 $ cd container/
-$ podman build -t goose-thunderbird .
+$ podman build -t goose-thunderbird . -f Containerfile.ramalama
 ```
 
 Choose a local model. I've found that qwen3.5:9b works reasonably well with the
